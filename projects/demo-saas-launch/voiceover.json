@@ -1,0 +1,8 @@
+{
+	"scenes": [
+		{"id": "s01-hook", "text": "Meet Smart Reports, from Lumen."},
+		{"id": "s02-generate", "text": "Open Reports and click Generate report. In seconds, Lumen writes your quarterly summary, charts included."},
+		{"id": "s03-how", "text": "It connects to your data, finds what changed, and turns it into a report your whole team can share."},
+		{"id": "s04-cta", "text": "Your next report writes itself. Start your free trial at lumen dot io."}
+	]
+}

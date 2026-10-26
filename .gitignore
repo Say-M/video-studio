@@ -3,5 +3,11 @@ dist
 .DS_Store
 .env
 
-# Ignore the output video from Git but not videos you import into src/.
+# Render output
 out
+projects/*/renders/
+projects/*/references/frames/
+
+# Large source media stays local (keep folder structure via .gitkeep)
+public/projects/*/recordings/*
+!public/projects/*/recordings/.gitkeep

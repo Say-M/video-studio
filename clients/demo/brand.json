@@ -1,0 +1,22 @@
+{
+  "name": "Lumen Analytics (demo)",
+  "colors": {
+    "primary": "#5B5BF6",
+    "secondary": "#22D3EE",
+    "accent": "#FBBF24",
+    "background": "#0B0B1A",
+    "surface": "#FFFFFF",
+    "text": "#0F172A",
+    "mutedText": "#64748B",
+    "border": "#E2E8F0",
+    "success": "#22C55E",
+    "danger": "#EF4444"
+  },
+  "fonts": {
+    "heading": "Inter, system-ui, sans-serif",
+    "body": "Inter, system-ui, sans-serif",
+    "mono": "JetBrains Mono, ui-monospace, monospace"
+  },
+  "radius": 14,
+  "style": "modern, confident, clean SaaS"
+}

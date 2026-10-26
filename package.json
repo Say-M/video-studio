@@ -1,7 +1,7 @@
 {
-  "name": "_scaffold",
+  "name": "video-studio",
   "version": "1.0.0",
-  "description": "My Remotion video",
+  "description": "AI video production studio (Remotion + Claude Code)",
   "repository": {},
   "license": "UNLICENSED",
   "engines": {
@@ -9,10 +9,21 @@
   },
   "private": true,
   "dependencies": {
+    "@remotion/captions": "4.0.539",
     "@remotion/cli": "4.0.539",
+    "@remotion/effects": "4.0.539",
+    "@remotion/google-fonts": "4.0.539",
+    "@remotion/layout-utils": "4.0.539",
+    "@remotion/media": "4.0.539",
+    "@remotion/media-utils": "4.0.539",
+    "@remotion/noise": "4.0.539",
+    "@remotion/paths": "4.0.539",
+    "@remotion/shapes": "4.0.539",
+    "@remotion/transitions": "4.0.539",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "remotion": "4.0.539"
+    "remotion": "4.0.539",
+    "zod": "4.5.4"
   },
   "devDependencies": {
     "@remotion/eslint-config-flat": "4.0.539",
@@ -26,7 +37,16 @@
     "dev": "remotion studio",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src && tsc",
+    "studio": "remotion studio",
+    "typecheck": "tsc",
+    "status": "node scripts/status.mjs",
+    "new": "node scripts/new-project.mjs",
+    "tts": "node scripts/tts.mjs",
+    "voices": "node scripts/voices.mjs",
+    "music": "node scripts/music.mjs",
+    "frames": "node scripts/frames.mjs",
+    "render:video": "node scripts/render.mjs"
   },
   "allowScripts": {
     "esbuild": false
