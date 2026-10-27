@@ -12,5 +12,14 @@ export const SceneVoice: React.FC<{readonly scene: TimedScene; readonly volume?:
 	if (!scene.vo) {
 		return null;
 	}
-	return <Audio name={`VO ${scene.id}`} src={staticFile(scene.vo.file)} from={scene.voOffset} volume={volume} />;
+	return (
+		<Audio
+			name={`VO ${scene.id}`}
+			src={staticFile(scene.vo.file)}
+			from={scene.voOffset}
+			volume={volume}
+			playbackRate={scene.vo.playbackRate ?? 1}
+			preservePitch
+		/>
+	);
 };

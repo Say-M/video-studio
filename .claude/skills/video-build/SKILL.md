@@ -21,7 +21,7 @@ Load `remotion-best-practices` (and through it `remotion-markup` / `remotion-int
 ## Steps
 
 1. **Open the preview first.** Start Studio in the background (`npx remotion studio --no-open`, run_in_background) and open the printed URL + `/<slug>-16x9` in the in-app browser so the user can watch progress. Keep it running.
-2. **Sync the plan.** `PLAN` ids = `voiceover.json` ids = scenes in `Video.tsx`, in script order. Set `fallbackSeconds` from the script's Est. column. Per scene you may set `padBefore`/`padAfter` (defaults 0.3s / 0.6s; keep `padAfter` ≥ transition length) or `minSeconds` for scenes that need time after the VO.
+2. **Sync the plan.** `PLAN` ids = `voiceover.json` ids = scenes in `Video.tsx`, in script order. Set `fallbackSeconds` from the script's Est. column. Per scene you may set `padBefore`/`padAfter` (defaults 0.3s / 0.6s; keep `padAfter` ≥ transition length) or `minSeconds` for scenes that need time after the VO. `VO_SPEED` in `plan.ts` plays the whole voice-over faster/slower (1 = as generated) and re-times every scene; the user may tune it by hand.
 3. **Build scene by scene**, in script order. For each scene:
    - Read its row in `script.md` (VO + visual spec) and the reference notes.
    - Get cue frames from the VO: `wordFrame(scene, '<word>', fps, {fallbackSeconds})`.

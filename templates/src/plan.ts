@@ -1,4 +1,4 @@
-import type {ScenePlanItem, VoTimings} from '../../library';
+import {withVoSpeed, type ScenePlanItem, type VoTimings} from '../../library';
 import timingsJson from './vo-timings.json';
 
 /**
@@ -15,7 +15,14 @@ export const PLAN: ScenePlanItem[] = [
 	{id: 's03-cta', fallbackSeconds: 4},
 ];
 
-export const TIMINGS = timingsJson as VoTimings;
+/**
+ * Voice-over playback speed. 1 = as generated, 1.2 = 20% faster (pitch kept).
+ * Scene lengths and every wordFrame() cue follow it, so change it freely
+ * without regenerating the voice-over.
+ */
+export const VO_SPEED = 1;
+
+export const TIMINGS = withVoSpeed(timingsJson as VoTimings, VO_SPEED);
 
 /** Path relative to public/, or null until music is generated (scripts/music.mjs). */
 export const MUSIC: string | null = null;

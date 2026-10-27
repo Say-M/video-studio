@@ -46,7 +46,7 @@ node scripts/tts.mjs <slug> --force       # everything (e.g. after changing voic
 Unchanged lines (same text + voice settings hash) are skipped, so revisions only pay for what changed. Every generation is logged in `projects/<slug>/assets-log.md`.
 
 ## 3. Check
-- Total VO vs target length (printed at the end). Over by >10% → tighten the script (ask the user) or raise `speed` slightly (max ~1.1 before it sounds rushed).
+- Total VO vs target length (printed at the end). Over by >10% → tighten the script (ask the user), or speed up playback without regenerating: set `VO_SPEED` in `src/projects/<slug>/plan.ts` (e.g. 1.15; pitch is kept, scene lengths and `wordFrame()` cues follow). Regenerating with a higher `speed` costs credits again.
 - Listen-proxy checks you can do: word timestamps present for every scene (needed for cues/captions); no scene with a suspiciously long duration for its word count (a sign of mispronounced spelled-out text or long pauses).
 - Ask the user to listen in Studio (`npx remotion studio`, open the composition) before building on top of it.
 

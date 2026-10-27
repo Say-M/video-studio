@@ -18,6 +18,8 @@ export type VoScene = {
 	words: VoWord[];
 	text?: string;
 	hash?: string;
+	/** Playback speed of the audio file (set by withVoSpeed; duration and words are already scaled). */
+	playbackRate?: number;
 };
 
 export type VoTimings = {
@@ -45,6 +47,24 @@ export type TimedScene = {
 	voOffset: number;
 	vo: VoScene | undefined;
 };
+
+/**
+ * Plays every VO line faster (speed > 1) or slower without regenerating audio:
+ * durations and word times are scaled, and SceneVoice plays the file at that rate
+ * (pitch preserved). Scene lengths and wordFrame() cues follow automatically.
+ */
+export const withVoSpeed = (timings: VoTimings, speed: number): VoTimings =>
+	speed === 1
+		? timings
+		: {
+				...timings,
+				scenes: timings.scenes.map((s) => ({
+					...s,
+					duration: s.duration / speed,
+					playbackRate: speed,
+					words: s.words.map((w) => ({...w, start: w.start / speed, end: w.end / speed})),
+				})),
+			};
 
 const DEFAULT_PAD_BEFORE = 0.3;
 const DEFAULT_PAD_AFTER = 0.6;
